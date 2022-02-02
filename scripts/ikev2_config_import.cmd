@@ -41,14 +41,27 @@ echo Before continuing, you must put the .p12 file you transferred from
 echo the VPN server in the *same folder* as this script.
 echo ===================================================================
 
+set client_name_gen=
+for /F "eol=| delims=" %%f in ('dir "*.p12" /A-D /B /O-D /TW 2^>nul') do (
+  set "p12_latest=%%f"
+  set "client_name_gen=!p12_latest:.p12=!"
+  goto :Enter_Client_Name
+)
+
 :Enter_Client_Name
 echo.
 echo Enter the name of the IKEv2 VPN client to import.
 echo Note: This is the same as the .p12 filename without extension.
 set client_name=
 set p12_file=
-set /p client_name="VPN client name: "
-if not defined client_name goto :Abort
+if defined client_name_gen (
+  echo To accept the suggested client name, press Enter.
+  set /p client_name="VPN client name [%client_name_gen%]: "
+  if not defined client_name set "client_name=%client_name_gen%"
+) else (
+  set /p client_name="VPN client name: "
+  if not defined client_name goto :Abort
+)
 set "client_name=%client_name:"=%"
 set "client_name=%client_name: =%"
 set "p12_file=%_work%\%client_name%.p12"
@@ -70,12 +83,34 @@ if not defined server_addr goto :Abort
 set "server_addr=%server_addr:"=%"
 set "server_addr=%server_addr: =%"
 
+set "conn_name_gen=IKEv2 VPN %server_addr%"
+powershell -command "Get-VpnConnection -Name '%conn_name_gen%'" >nul 2>&1
+if !errorlevel! neq 0 (
+  goto :Enter_Conn_Name
+)
+set "conn_name_gen=IKEv2 VPN 2 %server_addr%"
+powershell -command "Get-VpnConnection -Name '%conn_name_gen%'" >nul 2>&1
+if !errorlevel! neq 0 (
+  goto :Enter_Conn_Name
+)
+set "conn_name_gen=IKEv2 VPN 3 %server_addr%"
+powershell -command "Get-VpnConnection -Name '%conn_name_gen%'" >nul 2>&1
+if !errorlevel! equ 0 (
+  set conn_name_gen=
+)
+
 :Enter_Conn_Name
 echo.
-echo Provide a name for the new IKEv2 connection. e.g. My IKEv2 VPN.
+echo Provide a name for the new IKEv2 connection.
 set conn_name=
-set /p conn_name="IKEv2 connection name: "
-if not defined conn_name goto :Abort
+if defined conn_name_gen (
+  echo To accept the suggested connection name, press Enter.
+  set /p conn_name="IKEv2 connection name [%conn_name_gen%]: "
+  if not defined conn_name set "conn_name=%conn_name_gen%"
+) else (
+  set /p conn_name="IKEv2 connection name: "
+  if not defined conn_name goto :Abort
+)
 set "conn_name=%conn_name:"=%"
 powershell -command "Get-VpnConnection -Name '%conn_name%'" >nul 2>&1
 if !errorlevel! equ 0 (
@@ -109,7 +144,7 @@ if !errorlevel! neq 0 (
 
 echo IKEv2 configuration successfully imported^^!
 echo To connect to the VPN, click on the wireless/network icon in your system tray,
-echo select the new VPN entry, and click Connect.
+echo select the "%conn_name%" VPN entry, and click Connect.
 goto :Done
 
 :E_Admin
