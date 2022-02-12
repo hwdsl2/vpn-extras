@@ -120,13 +120,16 @@ if !errorlevel! equ 0 (
 )
 
 echo.
-echo Importing .p12 file. When prompted, enter the password for client
-echo config files, which can be found in the output of the IKEv2 helper
-echo script on your server.
+echo Importing .p12 file...
+certutil -f -p "" -importpfx "%p12_file%" NoExport >nul 2>&1
+if !errorlevel! equ 0 goto :Create_Conn
+echo When prompted, enter the password for client config files, which can be found
+echo in the output of the IKEv2 helper script on your server.
 :Import_P12
 certutil -f -importpfx "%p12_file%" NoExport
 if !errorlevel! neq 0 goto :Import_P12
 
+:Create_Conn
 echo.
 echo Creating VPN connection...
 powershell -command "Add-VpnConnection -ServerAddress '%server_addr%' -Name '%conn_name%' -TunnelType IKEv2 -AuthenticationMethod MachineCertificate -EncryptionLevel Required -PassThru"
