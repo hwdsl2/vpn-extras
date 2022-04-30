@@ -35,7 +35,7 @@ cd /d "!_work!"
 echo ===================================================================
 echo Welcome^^! Use this helper script to import an IKEv2 configuration
 echo into a PC running Windows 8, 10 or 11.
-echo For more details, see https://git.io/ikev2
+echo For more details, see vpnsetup.net/ikev2clients
 echo.
 echo Before continuing, you must put the .p12 file you transferred from
 echo the VPN server in the *same folder* as this script.
@@ -56,7 +56,7 @@ set client_name=
 set p12_file=
 if defined client_name_gen (
   echo To accept the suggested client name, press Enter.
-  set /p client_name="VPN client name [%client_name_gen%]: "
+  set /p client_name="VPN client name: [%client_name_gen%] "
   if not defined client_name set "client_name=%client_name_gen%"
 ) else (
   set /p client_name="VPN client name: "
@@ -105,7 +105,7 @@ echo Provide a name for the new IKEv2 connection.
 set conn_name=
 if defined conn_name_gen (
   echo To accept the suggested connection name, press Enter.
-  set /p conn_name="IKEv2 connection name [%conn_name_gen%]: "
+  set /p conn_name="IKEv2 connection name: [%conn_name_gen%] "
   if not defined conn_name set "conn_name=%conn_name_gen%"
 ) else (
   set /p conn_name="IKEv2 connection name: "
@@ -159,7 +159,7 @@ goto :Done
 :E_Win
 echo %_err%
 echo This script requires Windows 8, 10 or 11.
-echo Windows 7 users can manually import IKEv2 configuration. See https://git.io/ikev2
+echo Windows 7 users can manually import IKEv2 configuration. See vpnsetup.net/ikev2clients
 goto :Done
 
 :E_Cu
