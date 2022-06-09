@@ -35,7 +35,7 @@ cd /d "!_work!"
 echo ===================================================================
 echo Welcome^^! Use this helper script to import an IKEv2 configuration
 echo into a PC running Windows 8, 10 or 11.
-echo For more details, see vpnsetup.net/ikev2clients
+echo For more details, see https://vpnsetup.net/ikev2
 echo.
 echo Before continuing, you must put the .p12 file you transferred from
 echo the VPN server in the *same folder* as this script.
@@ -159,7 +159,7 @@ goto :Done
 :E_Win
 echo %_err%
 echo This script requires Windows 8, 10 or 11.
-echo Windows 7 users can manually import IKEv2 configuration. See vpnsetup.net/ikev2clients
+echo Windows 7 users can manually import IKEv2 configuration. See https://vpnsetup.net/ikev2
 goto :Done
 
 :E_Cu
