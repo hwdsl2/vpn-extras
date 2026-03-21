@@ -63,6 +63,7 @@ if defined client_name_gen (
   if not defined client_name goto :Abort
 )
 set "client_name=%client_name:"=%"
+set "client_name=%client_name:'=%"
 set "client_name=%client_name: =%"
 set "p12_file=%_work%\%client_name%.p12"
 if not exist "!p12_file!" (
@@ -73,15 +74,22 @@ if not exist "!p12_file!" (
   goto :Enter_Client_Name
 )
 
+:Enter_Server_Addr
 echo.
 echo Enter the IP address (or DNS name) of the VPN server.
 echo Note: This must exactly match the VPN server address in the output
 echo of the IKEv2 helper script on your server.
 set server_addr=
 set /p server_addr="VPN server address: "
-if not defined server_addr goto :Abort
 set "server_addr=%server_addr:"=%"
+set "server_addr=%server_addr:'=%"
 set "server_addr=%server_addr: =%"
+powershell -command "if ('!server_addr!' -match '^[a-zA-Z0-9.\-]+$') { exit 0 } else { exit 1 }" >nul 2>&1
+if !errorlevel! neq 0 (
+  echo.
+  echo ERROR: Invalid server address. Enter a valid IP address or DNS name.
+  goto :Enter_Server_Addr
+)
 
 set "conn_name_gen=IKEv2 VPN %server_addr%"
 powershell -command "Get-VpnConnection -Name '%conn_name_gen%'" >nul 2>&1
@@ -112,6 +120,7 @@ if defined conn_name_gen (
   if not defined conn_name goto :Abort
 )
 set "conn_name=%conn_name:"=%"
+set "conn_name=%conn_name:'=%"
 powershell -command "Get-VpnConnection -Name '%conn_name%'" >nul 2>&1
 if !errorlevel! equ 0 (
   echo.
@@ -143,6 +152,19 @@ powershell -command "Set-VpnConnectionIPsecConfiguration -ConnectionName '%conn_
 if !errorlevel! neq 0 (
   echo ERROR: Could not set IPsec configuration for the IKEv2 VPN connection.
   goto :Done
+)
+
+echo If IPv6 is enabled on your VPN server, you can add IPv6 routes
+echo to send IPv6 traffic through the VPN. If unsure, press Enter to skip.
+set ipv6_prompt=
+set /p ipv6_prompt="Add IPv6 routes for this VPN connection? [y/N] "
+if /i "!ipv6_prompt!"=="y" (
+  echo.
+  echo Adding IPv6 routes...
+  powershell -command "Add-VpnConnectionRoute -ConnectionName '%conn_name%' -DestinationPrefix '::/1' -PassThru"
+  powershell -command "Add-VpnConnectionRoute -ConnectionName '%conn_name%' -DestinationPrefix '8000::/1' -PassThru"
+) else (
+  echo.
 )
 
 echo IKEv2 configuration successfully imported^^!
