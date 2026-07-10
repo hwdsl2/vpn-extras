@@ -1,0 +1,47 @@
+name: Update VPN stats
+
+on:
+  schedule:
+    - cron: "27 2,8,14,20 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-manifest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # 7.0.0
+        with:
+          path: vpn-extras
+          persist-credentials: false
+      - name: Check manifest
+        working-directory: vpn-extras
+        run: scripts/check_vpn_manifest.sh
+
+  update:
+    runs-on: ubuntu-latest
+    needs: check-manifest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # 7.0.0
+      - name: Update stats
+        run: python3 scripts/update_vpn_stats.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit changes
+        run: |
+          paths="stats/vpn-v1.json stats/vpn-v1.md stats/vpn-v1-history.tsv"
+          if [ -z "$(git status --porcelain -- $paths)" ]; then
+            echo "No VPN usage count changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add $paths
+          git commit -m "Update VPN stats"
+          git push
