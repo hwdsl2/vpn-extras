@@ -35,7 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Commit changes
         run: |
-          paths="stats/vpn-v1.json stats/vpn-v1.md stats/vpn-v1-history.tsv"
+          paths="stats/vpn-v1.json stats/vpn-v1.md"
           if [ -z "$(git status --porcelain -- $paths)" ]; then
             echo "No VPN usage count changes."
             exit 0
