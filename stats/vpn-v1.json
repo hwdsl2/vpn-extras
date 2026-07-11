@@ -1,17 +1,17 @@
 {
   "by_arch": {
-    "amd64": 24,
+    "amd64": 27,
     "arm64": 2,
     "armv7": 0,
     "other": 0
   },
   "by_component": {
-    "headscale": 6,
-    "openvpn": 7,
+    "headscale": 7,
+    "openvpn": 9,
     "wireguard": 13
   },
   "counts": {
-    "vpn-v1-headscale-deploy-amd64": 6,
+    "vpn-v1-headscale-deploy-amd64": 7,
     "vpn-v1-headscale-deploy-arm64": 0,
     "vpn-v1-headscale-deploy-armv7": 0,
     "vpn-v1-headscale-deploy-other": 0,
@@ -23,7 +23,7 @@
     "vpn-v1-openvpn-deploy-arm64": 0,
     "vpn-v1-openvpn-deploy-armv7": 0,
     "vpn-v1-openvpn-deploy-other": 0,
-    "vpn-v1-openvpn-upgrade-amd64": 7,
+    "vpn-v1-openvpn-upgrade-amd64": 9,
     "vpn-v1-openvpn-upgrade-arm64": 0,
     "vpn-v1-openvpn-upgrade-armv7": 0,
     "vpn-v1-openvpn-upgrade-other": 0,
@@ -36,14 +36,14 @@
     "vpn-v1-wireguard-upgrade-armv7": 0,
     "vpn-v1-wireguard-upgrade-other": 0
   },
-  "generated_at": "2026-07-11T05:24:00Z",
+  "generated_at": "2026-07-11T09:53:07Z",
   "owner": "hwdsl2",
   "release_id": 58486377,
   "repo": "vpn-extras",
   "tag": "v1.1.0",
   "totals": {
-    "all": 26,
-    "deploy": 15,
-    "upgrade": 11
+    "all": 29,
+    "deploy": 16,
+    "upgrade": 13
   }
 }
