@@ -1,6 +1,6 @@
 # VPN Usage Counts
 
-Last updated: `2026-07-17T10:13:36Z`
+Last updated: `2026-07-17T15:49:28Z`
 
 Counts are approximate GitHub release asset download counts, not unique users or active installs.
 
@@ -8,8 +8,8 @@ Counts are approximate GitHub release asset download counts, not unique users or
 
 | Metric | Count |
 |---|---:|
-| all | 117 |
-| deploy | 78 |
+| all | 118 |
+| deploy | 79 |
 | upgrade | 39 |
 
 ## By Component
@@ -18,13 +18,13 @@ Counts are approximate GitHub release asset download counts, not unique users or
 |---|---:|
 | headscale | 16 |
 | openvpn | 31 |
-| wireguard | 70 |
+| wireguard | 71 |
 
 ## By Architecture
 
 | Name | Count |
 |---|---:|
-| amd64 | 108 |
+| amd64 | 109 |
 | arm64 | 8 |
 | armv7 | 1 |
 | other | 0 |
@@ -49,7 +49,7 @@ Counts are approximate GitHub release asset download counts, not unique users or
 | `vpn-v1-openvpn-upgrade-arm64` | 1 |
 | `vpn-v1-openvpn-upgrade-armv7` | 0 |
 | `vpn-v1-openvpn-upgrade-other` | 0 |
-| `vpn-v1-wireguard-deploy-amd64` | 58 |
+| `vpn-v1-wireguard-deploy-amd64` | 59 |
 | `vpn-v1-wireguard-deploy-arm64` | 4 |
 | `vpn-v1-wireguard-deploy-armv7` | 1 |
 | `vpn-v1-wireguard-deploy-other` | 0 |
