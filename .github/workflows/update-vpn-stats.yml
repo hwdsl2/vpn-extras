@@ -2,7 +2,7 @@ name: Update VPN stats
 
 on:
   schedule:
-    - cron: "27 2,8,14,20 * * *"
+    - cron: "27 2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -35,13 +35,13 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Commit changes
         run: |
-          paths="stats/vpn-v1.json stats/vpn-v1.md"
-          if [ -z "$(git status --porcelain -- $paths)" ]; then
+          paths=(stats/vpn-v1.json stats/vpn-v1.md)
+          if [ -z "$(git status --porcelain -- "${paths[@]}")" ]; then
             echo "No VPN usage count changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add $paths
+          git add "${paths[@]}"
           git commit -m "Update VPN stats"
           git push
