@@ -1,49 +1,49 @@
 {
   "by_arch": {
-    "amd64": 273,
-    "arm64": 34,
-    "armv7": 1,
+    "amd64": 18,
+    "arm64": 0,
+    "armv7": 0,
     "other": 0
   },
   "by_component": {
-    "headscale": 37,
-    "openvpn": 122,
-    "wireguard": 149
+    "headscale": 0,
+    "openvpn": 15,
+    "wireguard": 3
   },
   "counts": {
-    "vpn-v1-headscale-deploy-amd64": 29,
-    "vpn-v1-headscale-deploy-arm64": 2,
+    "vpn-v1-headscale-deploy-amd64": 0,
+    "vpn-v1-headscale-deploy-arm64": 0,
     "vpn-v1-headscale-deploy-armv7": 0,
     "vpn-v1-headscale-deploy-other": 0,
-    "vpn-v1-headscale-upgrade-amd64": 5,
-    "vpn-v1-headscale-upgrade-arm64": 1,
+    "vpn-v1-headscale-upgrade-amd64": 0,
+    "vpn-v1-headscale-upgrade-arm64": 0,
     "vpn-v1-headscale-upgrade-armv7": 0,
     "vpn-v1-headscale-upgrade-other": 0,
-    "vpn-v1-openvpn-deploy-amd64": 24,
-    "vpn-v1-openvpn-deploy-arm64": 7,
+    "vpn-v1-openvpn-deploy-amd64": 9,
+    "vpn-v1-openvpn-deploy-arm64": 0,
     "vpn-v1-openvpn-deploy-armv7": 0,
     "vpn-v1-openvpn-deploy-other": 0,
-    "vpn-v1-openvpn-upgrade-amd64": 77,
-    "vpn-v1-openvpn-upgrade-arm64": 14,
+    "vpn-v1-openvpn-upgrade-amd64": 6,
+    "vpn-v1-openvpn-upgrade-arm64": 0,
     "vpn-v1-openvpn-upgrade-armv7": 0,
     "vpn-v1-openvpn-upgrade-other": 0,
-    "vpn-v1-wireguard-deploy-amd64": 125,
-    "vpn-v1-wireguard-deploy-arm64": 7,
-    "vpn-v1-wireguard-deploy-armv7": 1,
+    "vpn-v1-wireguard-deploy-amd64": 3,
+    "vpn-v1-wireguard-deploy-arm64": 0,
+    "vpn-v1-wireguard-deploy-armv7": 0,
     "vpn-v1-wireguard-deploy-other": 0,
-    "vpn-v1-wireguard-upgrade-amd64": 13,
-    "vpn-v1-wireguard-upgrade-arm64": 3,
+    "vpn-v1-wireguard-upgrade-amd64": 0,
+    "vpn-v1-wireguard-upgrade-arm64": 0,
     "vpn-v1-wireguard-upgrade-armv7": 0,
     "vpn-v1-wireguard-upgrade-other": 0
   },
-  "generated_at": "2026-08-05T05:26:49Z",
+  "generated_at": "2026-08-06T05:29:18Z",
   "owner": "hwdsl2",
   "release_id": 58486377,
   "repo": "vpn-extras",
   "tag": "v1.1.0",
   "totals": {
-    "all": 308,
-    "deploy": 195,
-    "upgrade": 113
+    "all": 18,
+    "deploy": 12,
+    "upgrade": 6
   }
 }
