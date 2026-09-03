@@ -1,14 +1,14 @@
 {
   "by_arch": {
-    "amd64": 337,
-    "arm64": 46,
-    "armv7": 14,
+    "amd64": 351,
+    "arm64": 54,
+    "armv7": 15,
     "other": 12
   },
   "by_component": {
     "headscale": 72,
-    "openvpn": 203,
-    "wireguard": 134
+    "openvpn": 217,
+    "wireguard": 143
   },
   "counts": {
     "vpn-v1-headscale-deploy-amd64": 54,
@@ -19,31 +19,31 @@
     "vpn-v1-headscale-upgrade-arm64": 2,
     "vpn-v1-headscale-upgrade-armv7": 2,
     "vpn-v1-headscale-upgrade-other": 2,
-    "vpn-v1-openvpn-deploy-amd64": 144,
-    "vpn-v1-openvpn-deploy-arm64": 22,
+    "vpn-v1-openvpn-deploy-amd64": 152,
+    "vpn-v1-openvpn-deploy-arm64": 27,
     "vpn-v1-openvpn-deploy-armv7": 2,
     "vpn-v1-openvpn-deploy-other": 2,
-    "vpn-v1-openvpn-upgrade-amd64": 25,
+    "vpn-v1-openvpn-upgrade-amd64": 26,
     "vpn-v1-openvpn-upgrade-arm64": 4,
     "vpn-v1-openvpn-upgrade-armv7": 2,
     "vpn-v1-openvpn-upgrade-other": 2,
-    "vpn-v1-wireguard-deploy-amd64": 86,
-    "vpn-v1-wireguard-deploy-arm64": 8,
-    "vpn-v1-wireguard-deploy-armv7": 2,
+    "vpn-v1-wireguard-deploy-amd64": 90,
+    "vpn-v1-wireguard-deploy-arm64": 11,
+    "vpn-v1-wireguard-deploy-armv7": 3,
     "vpn-v1-wireguard-deploy-other": 2,
-    "vpn-v1-wireguard-upgrade-amd64": 22,
+    "vpn-v1-wireguard-upgrade-amd64": 23,
     "vpn-v1-wireguard-upgrade-arm64": 8,
     "vpn-v1-wireguard-upgrade-armv7": 4,
     "vpn-v1-wireguard-upgrade-other": 2
   },
-  "generated_at": "2026-09-02T07:10:12Z",
+  "generated_at": "2026-09-03T07:14:32Z",
   "owner": "hwdsl2",
   "release_id": 58486377,
   "repo": "vpn-extras",
   "tag": "v1.1.0",
   "totals": {
-    "all": 409,
-    "deploy": 328,
-    "upgrade": 81
+    "all": 432,
+    "deploy": 349,
+    "upgrade": 83
   }
 }
