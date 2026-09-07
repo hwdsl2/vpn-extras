@@ -1,6 +1,6 @@
 # VPN Usage Counts
 
-Last updated: `2026-09-06T07:11:03Z`
+Last updated: `2026-09-07T07:23:59Z`
 
 Counts are approximate GitHub release asset download counts, not unique users or active installs.
 
@@ -8,23 +8,23 @@ Counts are approximate GitHub release asset download counts, not unique users or
 
 | Metric | Count |
 |---|---:|
-| all | 470 |
-| deploy | 378 |
-| upgrade | 92 |
+| all | 474 |
+| deploy | 381 |
+| upgrade | 93 |
 
 ## By Component
 
 | Name | Count |
 |---|---:|
-| headscale | 80 |
-| openvpn | 225 |
+| headscale | 82 |
+| openvpn | 227 |
 | wireguard | 165 |
 
 ## By Architecture
 
 | Name | Count |
 |---|---:|
-| amd64 | 385 |
+| amd64 | 389 |
 | arm64 | 55 |
 | armv7 | 18 |
 | other | 12 |
@@ -33,15 +33,15 @@ Counts are approximate GitHub release asset download counts, not unique users or
 
 | Asset | Count |
 |---|---:|
-| `vpn-v1-headscale-deploy-amd64` | 57 |
+| `vpn-v1-headscale-deploy-amd64` | 58 |
 | `vpn-v1-headscale-deploy-arm64` | 2 |
 | `vpn-v1-headscale-deploy-armv7` | 2 |
 | `vpn-v1-headscale-deploy-other` | 2 |
-| `vpn-v1-headscale-upgrade-amd64` | 11 |
+| `vpn-v1-headscale-upgrade-amd64` | 12 |
 | `vpn-v1-headscale-upgrade-arm64` | 2 |
 | `vpn-v1-headscale-upgrade-armv7` | 2 |
 | `vpn-v1-headscale-upgrade-other` | 2 |
-| `vpn-v1-openvpn-deploy-amd64` | 158 |
+| `vpn-v1-openvpn-deploy-amd64` | 160 |
 | `vpn-v1-openvpn-deploy-arm64` | 28 |
 | `vpn-v1-openvpn-deploy-armv7` | 3 |
 | `vpn-v1-openvpn-deploy-other` | 2 |
