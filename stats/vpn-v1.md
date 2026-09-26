@@ -1,6 +1,6 @@
 # VPN Usage Counts
 
-Last updated: `2026-09-25T07:57:52Z`
+Last updated: `2026-09-26T07:50:53Z`
 
 Counts are approximate GitHub release asset download counts, not unique users or active installs.
 
@@ -8,24 +8,24 @@ Counts are approximate GitHub release asset download counts, not unique users or
 
 | Metric | Count |
 |---|---:|
-| all | 746 |
-| deploy | 576 |
-| upgrade | 170 |
+| all | 756 |
+| deploy | 583 |
+| upgrade | 173 |
 
 ## By Component
 
 | Name | Count |
 |---|---:|
-| headscale | 106 |
-| openvpn | 361 |
-| wireguard | 279 |
+| headscale | 108 |
+| openvpn | 365 |
+| wireguard | 283 |
 
 ## By Architecture
 
 | Name | Count |
 |---|---:|
-| amd64 | 583 |
-| arm64 | 113 |
+| amd64 | 592 |
+| arm64 | 114 |
 | armv7 | 32 |
 | other | 18 |
 
@@ -33,7 +33,7 @@ Counts are approximate GitHub release asset download counts, not unique users or
 
 | Asset | Count |
 |---|---:|
-| `vpn-v1-headscale-deploy-amd64` | 68 |
+| `vpn-v1-headscale-deploy-amd64` | 70 |
 | `vpn-v1-headscale-deploy-arm64` | 5 |
 | `vpn-v1-headscale-deploy-armv7` | 3 |
 | `vpn-v1-headscale-deploy-other` | 3 |
@@ -41,19 +41,19 @@ Counts are approximate GitHub release asset download counts, not unique users or
 | `vpn-v1-headscale-upgrade-arm64` | 4 |
 | `vpn-v1-headscale-upgrade-armv7` | 3 |
 | `vpn-v1-headscale-upgrade-other` | 3 |
-| `vpn-v1-openvpn-deploy-amd64` | 243 |
+| `vpn-v1-openvpn-deploy-amd64` | 246 |
 | `vpn-v1-openvpn-deploy-arm64` | 46 |
 | `vpn-v1-openvpn-deploy-armv7` | 4 |
 | `vpn-v1-openvpn-deploy-other` | 3 |
-| `vpn-v1-openvpn-upgrade-amd64` | 45 |
+| `vpn-v1-openvpn-upgrade-amd64` | 46 |
 | `vpn-v1-openvpn-upgrade-arm64` | 14 |
 | `vpn-v1-openvpn-upgrade-armv7` | 3 |
 | `vpn-v1-openvpn-upgrade-other` | 3 |
-| `vpn-v1-wireguard-deploy-amd64` | 165 |
+| `vpn-v1-wireguard-deploy-amd64` | 167 |
 | `vpn-v1-wireguard-deploy-arm64` | 22 |
 | `vpn-v1-wireguard-deploy-armv7` | 11 |
 | `vpn-v1-wireguard-deploy-other` | 3 |
-| `vpn-v1-wireguard-upgrade-amd64` | 45 |
-| `vpn-v1-wireguard-upgrade-arm64` | 22 |
+| `vpn-v1-wireguard-upgrade-amd64` | 46 |
+| `vpn-v1-wireguard-upgrade-arm64` | 23 |
 | `vpn-v1-wireguard-upgrade-armv7` | 8 |
 | `vpn-v1-wireguard-upgrade-other` | 3 |
